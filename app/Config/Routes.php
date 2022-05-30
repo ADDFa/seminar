@@ -31,7 +31,36 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// TODO: Home Routes
 $routes->get('/', 'Home::index');
+
+// TODO: User Routes
+$routes->group('user', function ($routes) {
+    $routes->get('contoh', 'Home::index');
+});
+
+// TODO: Admin Routes
+$routes->group('admin', function ($routes) {
+    $routes->get('dashboard', 'AdminController::index');
+});
+
+// TODO: CRUD Routes
+// --   Untuk Keamanan Data, Routes CRUD Harus Menggunakan Metode Pengambilan Data "post". Contoh Dibawah Ini
+
+// -- User
+$routes->group('user', function ($routes) {
+    $routes->post('insert', 'Crud\UserController::insert');
+    $routes->post('update', 'Crud\UserController::update');
+    $routes->post('delete', 'Crud\UserController::delete');
+});
+
+// -- Pemateri
+$routes->group('pemateri', function ($routes) {
+    $routes->post('insert', 'Crud\PemateriController::insert');
+    $routes->post('update', 'Crud\PemateriController::update');
+    $routes->post('delete', 'Crud\PemateriController::delete');
+});
 
 /*
  * --------------------------------------------------------------------
