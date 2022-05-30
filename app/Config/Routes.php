@@ -37,7 +37,7 @@ $routes->get('/', 'Home::index');
 
 // TODO: User Routes
 $routes->group('user', function ($routes) {
-    $routes->get('/contoh', 'Home::index');
+    $routes->get('contoh', 'Home::contoh');
 });
 
 // TODO: Admin Routes

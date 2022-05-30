@@ -9,8 +9,8 @@ class Home extends BaseController
         return view('welcome_message');
     }
 
-    public function iniContoh()
+    public function contoh()
     {
-        return view('Contoh');
+        return view('contoh');
     }
 }
